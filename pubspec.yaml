@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^5.1.0
   flutter_native_splash: ^2.3.2
+  easy_localization: ^3.0.3
 
 
 flutter_native_splash:
@@ -77,6 +78,7 @@ flutter:
   assets:
     - assets/images/
     - assets/files/
+    - assets/translations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

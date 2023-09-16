@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/my_theme_data.dart';
 import 'package:islami_app/sura_details.dart';
@@ -243,11 +244,11 @@ class QuranTab extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               "Sura Names",
-            )),
+            ).tr()),
         verticalAlignment: TableCellVerticalAlignment.middle),
     TableCell(
         child: Container(
-            alignment: Alignment.center, child: Text("Verses number"))),
+            alignment: Alignment.center, child: Text("Verses number").tr())),
   ]);
 
   QuranTab() {
@@ -256,16 +257,16 @@ class QuranTab extends StatelessWidget {
       TableRow temp = TableRow(children: [
         TableCell(
             child: Text(
-          " ${suraNames[i]}",
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 25),
-        )),
+              " ${suraNames[i]}",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 25),
+            )),
         TableCell(
             child: Text(
-          " ${num_verses[i]}",
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 25),
-        )),
+              " ${num_verses[i]}",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 25),
+            )),
       ]);
       myRows.add(temp);
     }
@@ -281,22 +282,22 @@ class QuranTab extends StatelessWidget {
           ),
           Expanded(
               child: ListView.builder(
-            itemCount: myRows.length,
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, SuraDetails.routeName,
-                      arguments: SuraModel(suraNames[index - 1], index - 1));
+                itemCount: myRows.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, SuraDetails.routeName,
+                          arguments: SuraModel(suraNames[index - 1], index - 1));
+                    },
+                    child: Table(
+                      border: TableBorder.all(color: MyThemeData.primary),
+                      children: [
+                        myRows[index],
+                      ],
+                    ),
+                  );
                 },
-                child: Table(
-                  border: TableBorder.all(color: MyThemeData.primary),
-                  children: [
-                    myRows[index],
-                  ],
-                ),
-              );
-            },
-          )),
+              )),
         ],
       ),
     );
