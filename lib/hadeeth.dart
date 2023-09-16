@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/ahadeth_details.dart';
@@ -12,7 +13,7 @@ class HadeethTab extends StatelessWidget {
     loadHadeeth();
     return Scaffold(
         body: Column(
-      children: [
+          children: [
         Container(
           child: Image.asset("assets/images/ahadeth_image.png"),
         ),
@@ -21,10 +22,10 @@ class HadeethTab extends StatelessWidget {
           color: MyThemeData.primary,
         ),
         Text(
-          "ِِAhadeeth",
+          "Ahadeth",
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodyMedium,
-        ),
+        ).tr(),
         Divider(
           thickness: 3,
           color: MyThemeData.primary,
@@ -36,26 +37,26 @@ class HadeethTab extends StatelessWidget {
               color: MyThemeData.primary,
               thickness: 1,
               endIndent: 40,
-              indent: 40,
-            );
-          },
-          itemCount: allAhadeeth.length,
-          itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, AhadeethDetails.routeName,
-                    arguments: HadeethModel(
-                        allAhadeeth[index].name, allAhadeeth[index].content));
-              },
-              child: Text(
-                allAhadeeth[index].name,
-                textAlign: TextAlign.center,
-              ),
-            );
-          },
-        ))
-      ],
-    ));
+                      indent: 40,
+                    );
+                  },
+                  itemCount: allAhadeeth.length,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, AhadeethDetails.routeName,
+                            arguments: HadeethModel(
+                                allAhadeeth[index].name, allAhadeeth[index].content));
+                      },
+                      child: Text(
+                        allAhadeeth[index].name,
+                        textAlign: TextAlign.center,
+                      ),
+                    );
+                  },
+                ))
+          ],
+        ));
   }
 
   loadHadeeth() async {
@@ -67,7 +68,7 @@ class HadeethTab extends StatelessWidget {
         hadeeth = AhadeethList[i];
         tempString = hadeeth.trim().split("\n");
         title = tempString[0];
-        print(title);
+        //print(title);
         tempString.removeAt(0);
         content = tempString;
         HadeethModel hadeethModel = HadeethModel(title, content);
