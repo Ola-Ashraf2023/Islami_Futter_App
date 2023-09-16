@@ -297,13 +297,6 @@ class QuranTab extends StatelessWidget {
               );
             },
           )),
-          //Divider(thickness: 2, color: MyThemeData.primary,endIndent: 40,),
-          //Text("Sura Names",style: Theme.of(context).textTheme.bodyMedium,),
-          //Divider(thickness: 2, color: MyThemeData.primary,endIndent: 40,),
-          //Expanded(
-          //child: ListView(
-          //      )
-          // )
         ],
       ),
     );
