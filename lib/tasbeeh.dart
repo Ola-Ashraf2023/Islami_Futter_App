@@ -33,7 +33,7 @@ class _TasbeehTabState extends State<TasbeehTab> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                "عدد التسبيحات",
+                "Number of Tasbeehs",
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
