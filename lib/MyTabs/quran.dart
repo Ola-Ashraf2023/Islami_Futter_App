@@ -243,12 +243,12 @@ class QuranTab extends StatelessWidget {
         child: Container(
             alignment: Alignment.center,
             child: Text(
-              "Sura Names",
-            ).tr()),
+              "Sura Names".tr(),
+            )),
         verticalAlignment: TableCellVerticalAlignment.middle),
     TableCell(
         child: Container(
-            alignment: Alignment.center, child: Text("Verses number").tr())),
+            alignment: Alignment.center, child: Text("Verses number".tr()))),
   ]);
 
   QuranTab() {
@@ -270,20 +270,49 @@ class QuranTab extends StatelessWidget {
       ]);
       myRows.add(temp);
     }
+    //print("inside quran tab language is ${EasyLocalization.of(context)!.currentLocale.toString()}")
   }
 
   @override
   Widget build(BuildContext context) {
+    if (EasyLocalization.of(context)!.currentLocale.toString() == "ar") {
+      myRows[0] = TableRow(children: [
+        TableCell(
+            child: Container(
+                alignment: Alignment.center,
+                child: Text(
+                  "السور".tr(),
+                )),
+            verticalAlignment: TableCellVerticalAlignment.middle),
+        TableCell(
+            child: Container(
+                alignment: Alignment.center, child: Text("الآيـــات".tr()))),
+      ]);
+    } else {
+      myRows[0] = TableRow(children: [
+        TableCell(
+            child: Container(
+                alignment: Alignment.center,
+                child: Text(
+                  "Sura Names".tr(),
+                )),
+            verticalAlignment: TableCellVerticalAlignment.middle),
+        TableCell(
+            child: Container(
+                alignment: Alignment.center, child: Text("Verses".tr()))),
+      ]);
+    }
     return Scaffold(
       body: Column(
         children: [
+          //Text(EasyLocalization.of(context)!.currentLocale.toString()),
           Container(
             child: Image.asset("assets/images/quran_image.png"),
           ),
           Expanded(
               child: ListView.builder(
-                itemCount: myRows.length,
-                itemBuilder: (context, index) {
+            itemCount: myRows.length,
+            itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
                       Navigator.pushNamed(context, SuraDetails.routeName,

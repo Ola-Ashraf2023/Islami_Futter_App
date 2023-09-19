@@ -4,5 +4,11 @@
   "Verses number": "Verses number",
   "Ahadeth": "Ahadeth",
   "Number of Tasbeehs": "Number of Tasbeehs",
-  "Quran Channel": "Quran Channel"
+  "Quran Channel": "Quran Channel",
+  "Language": "Language",
+  "Mode": "Mode",
+  "English": "English",
+  "Arabic": "Arabic",
+  "Light": "Light",
+  "Dark": "Dark"
 }
