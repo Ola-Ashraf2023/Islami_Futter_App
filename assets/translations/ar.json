@@ -1,8 +1,14 @@
 {
   "Islami": "اِسلامي",
-  "Sura Names": "اسم السور",
-  "Verses number": "عدد الآيـــات",
+  "Sura Names": "السور",
+  "Verses number": "الآيـــات",
   "Ahadeth": "أحاديث",
   "Number of Tasbeehs": "عدد التسبيحات",
-  "Quran Channel": "إذاعة القرآن الكريم"
+  "Quran Channel": "إذاعة القرآن الكريم",
+  "Language": "اللغة",
+  "Mode": "الوضعية",
+  "English": "الانجليزية",
+  "Arabic": "العربية",
+  "Light": "ضوء",
+  "Dark": "ظلام"
 }
