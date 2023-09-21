@@ -1,12 +1,10 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class MyProvider extends ChangeNotifier {
-  String local = "en";
+  ThemeMode theme = ThemeMode.light;
 
-  changeLanguage(String langCode, BuildContext context) {
-    local = langCode;
-    EasyLocalization.of(context)!.setLocale(Locale(local));
+  changeTheme(ThemeMode mode) {
+    theme = mode;
     notifyListeners();
   }
 }

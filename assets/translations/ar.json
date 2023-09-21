@@ -3,12 +3,17 @@
   "Sura Names": "السور",
   "Verses number": "الآيـــات",
   "Ahadeth": "أحاديث",
+  "Hadeeth": "حديث",
   "Number of Tasbeehs": "عدد التسبيحات",
   "Quran Channel": "إذاعة القرآن الكريم",
+  "Quran": "قرآن",
   "Language": "اللغة",
   "Mode": "الوضعية",
   "English": "الانجليزية",
   "Arabic": "العربية",
   "Light": "ضوء",
-  "Dark": "ظلام"
+  "Dark": "ظلام",
+  "Radio": "راديو",
+  "Sebha": "سبحة",
+  "Settings": "إعدادات"
 }

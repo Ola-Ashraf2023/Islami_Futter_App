@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/hadeeth_model.dart';
+import 'package:islami_app/models/hadeeth_model.dart';
+import 'package:islami_app/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'my_theme_data.dart';
 
@@ -13,11 +15,14 @@ class AhadeethDetails extends StatefulWidget {
 class _AhadeethDetailsState extends State<AhadeethDetails> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as HadeethModel;
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/background.png"),
+          image: AssetImage(provider.theme == ThemeMode.light
+              ? "assets/images/background.png"
+              : "assets/images/darkBackground.png"),
           fit: BoxFit.fill,
         ),
       ),

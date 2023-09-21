@@ -1,10 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_theme_data.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/my_provider.dart';
 
 class RadioTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Scaffold(
       body: Column(
         children: [
@@ -31,17 +34,17 @@ class RadioTab extends StatelessWidget {
               children: [
                 Icon(
                   Icons.skip_previous,
-                  color: MyThemeData.primary,
+                  color: Theme.of(context).colorScheme.onBackground,
                   size: 40,
                 ),
                 Icon(
                   Icons.play_arrow_rounded,
-                  color: MyThemeData.primary,
+                  color: Theme.of(context).colorScheme.onBackground,
                   size: 60,
                 ),
                 Icon(
                   Icons.skip_next,
-                  color: MyThemeData.primary,
+                  color: Theme.of(context).colorScheme.onBackground,
                   size: 40,
                 ),
               ],
