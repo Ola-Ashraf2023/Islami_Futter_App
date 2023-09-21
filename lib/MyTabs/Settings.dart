@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/my_theme_data.dart';
+import 'package:islami_app/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../bottomSheets/show_language_bottom_sheet.dart';
 import '../bottomSheets/show_mode_bottom_sheet.dart';
@@ -13,6 +15,7 @@ class SettingsTab extends StatefulWidget {
 class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Scaffold(
       body: Column(
         children: [
@@ -31,9 +34,9 @@ class _SettingsTabState extends State<SettingsTab> {
               child: Row(
                 children: [
                   Text(EasyLocalization.of(context)!.currentLocale.toString() ==
-                              "en"
-                          ? "English"
-                          : "Arabic")
+                      "en"
+                      ? "English"
+                      : "Arabic")
                       .tr(),
                 ],
               ),
@@ -56,7 +59,8 @@ class _SettingsTabState extends State<SettingsTab> {
               ),
               child: Row(
                 children: [
-                  Text("Light").tr(),
+                  Text(provider.theme == ThemeMode.light ? "Light" : "Dark")
+                      .tr(),
                 ],
               ),
             ),
