@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/my_theme_data.dart';
 
-import '../bottomSheets/show_language_button_sheet.dart';
+import '../bottomSheets/show_language_bottom_sheet.dart';
 import '../bottomSheets/show_mode_bottom_sheet.dart';
 
 class SettingsTab extends StatefulWidget {

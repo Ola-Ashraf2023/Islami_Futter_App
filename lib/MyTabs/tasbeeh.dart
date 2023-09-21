@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_theme_data.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/my_provider.dart';
 
 class TasbeehTab extends StatefulWidget {
   @override
@@ -20,6 +22,7 @@ class _TasbeehTabState extends State<TasbeehTab> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
@@ -29,7 +32,9 @@ class _TasbeehTabState extends State<TasbeehTab> {
               height: 14,
             ),
             Container(
-              child: Image.asset("assets/images/FullSebha.png"),
+              child: Image.asset(provider.theme == ThemeMode.light
+                  ? "assets/images/FullSebha.png"
+                  : "assets/images/FullSebhaDark.png"),
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
@@ -41,7 +46,7 @@ class _TasbeehTabState extends State<TasbeehTab> {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xffB7935F),
+                color: Theme.of(context).colorScheme.primary,
               ),
               child: Padding(
                 padding: const EdgeInsets.only(
@@ -70,11 +75,11 @@ class _TasbeehTabState extends State<TasbeehTab> {
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium!
-                      .copyWith(color: Colors.white),
+                      .copyWith(color: Colors.black),
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: MyThemeData.primary,
+                  backgroundColor: Theme.of(context).colorScheme.onBackground,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25))),
             )

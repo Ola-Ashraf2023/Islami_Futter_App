@@ -29,12 +29,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
-    final currentLocale = provider.local;
     return MaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       debugShowCheckedModeBanner: false,
+      themeMode: provider.theme,
       theme: MyThemeData.LightTheme,
       darkTheme: MyThemeData.DarkTheme,
       title: 'Islami',

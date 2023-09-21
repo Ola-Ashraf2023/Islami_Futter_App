@@ -5,7 +5,23 @@ class MyThemeData {
   static Color primary = const Color(0xffB7935F);
   static Color blackColor = const Color(0xff000000);
   static Color primaryDark = const Color(0xff141A2E);
+  static Color darkSecondary = const Color(0xffFACC1D);
+
+  //static Color primaryDark = const Color(0xffB7935f);
   static ThemeData LightTheme = ThemeData(
+      colorScheme: ColorScheme(
+        primary: primary,
+        onPrimary: Colors.black45,
+        secondary: blackColor,
+        onSecondary: Colors.white,
+        surface: Colors.deepPurpleAccent,
+        onSurface: Colors.orangeAccent,
+        brightness: Brightness.light,
+        error: Colors.red,
+        onError: Colors.redAccent,
+        background: blackColor,
+        onBackground: primary,
+      ),
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
         centerTitle: true,
@@ -36,10 +52,23 @@ class MyThemeData {
         unselectedItemColor: Colors.white,
       ));
   static ThemeData DarkTheme = ThemeData(
+      colorScheme: ColorScheme(
+        primary: primaryDark,
+        onPrimary: Colors.white,
+        secondary: darkSecondary,
+        onSecondary: Colors.white,
+        surface: Colors.deepPurpleAccent,
+        onSurface: Colors.orangeAccent,
+        brightness: Brightness.dark,
+        error: Colors.red,
+        onError: Colors.redAccent,
+        background: darkSecondary,
+        onBackground: darkSecondary,
+      ),
       scaffoldBackgroundColor: Colors.transparent,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: Colors.white,
         ),
         centerTitle: true,
         elevation: 0,
@@ -49,23 +78,23 @@ class MyThemeData {
         bodyLarge: GoogleFonts.elMessiri(
           fontSize: 30,
           fontWeight: FontWeight.bold,
-          color: Color(0xff242424),
+          color: Colors.white,
         ),
         bodyMedium: GoogleFonts.elMessiri(
           fontSize: 25,
           fontWeight: FontWeight.bold,
-          color: Color(0xff242424),
+          color: Colors.white,
         ),
         bodySmall: GoogleFonts.elMessiri(
           fontSize: 20,
           fontWeight: FontWeight.bold,
-          color: Color(0xff242424),
+          color: darkSecondary,
         ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         type: BottomNavigationBarType.shifting,
         backgroundColor: primaryDark,
-        selectedItemColor: Colors.black,
+        selectedItemColor: darkSecondary,
         unselectedItemColor: Colors.white,
       ));
 }

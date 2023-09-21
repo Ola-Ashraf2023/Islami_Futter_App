@@ -6,6 +6,8 @@ import 'package:islami_app/MyTabs/quran.dart';
 import 'package:islami_app/MyTabs/radio.dart';
 import 'package:islami_app/MyTabs/tasbeeh.dart';
 import 'package:islami_app/my_theme_data.dart';
+import 'package:islami_app/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
@@ -19,11 +21,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Stack(
       children: [
         Image(
           image: AssetImage(
-            "assets/images/background.png",
+            provider.theme == ThemeMode.light
+                ? "assets/images/background.png"
+                : "assets/images/darkBackground.png",
           ),
           width: double.infinity,
           fit: BoxFit.fill,
@@ -44,37 +49,58 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage("assets/images/radio.png"),
-                    color: index == 0 ? Colors.black : Colors.white,
+                    color: index == 0
+                        ? Theme.of(context).colorScheme.background
+                        : Colors.white,
                   ),
-                  label: "Radio",
-                  backgroundColor: MyThemeData.primary),
+                  label: "Radio".tr(),
+                  backgroundColor: provider.theme == ThemeMode.light
+                      ? MyThemeData.primary
+                      : MyThemeData.primaryDark),
               BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage("assets/images/sebha.png"),
-                    color: index == 1 ? Colors.black : Colors.white,
+                    color: index == 1
+                        ? Theme.of(context).colorScheme.background
+                        : Colors.white,
                   ),
-                  label: "Sebha",
-                  backgroundColor: MyThemeData.primary),
+                  label: "Sebha".tr(),
+                  backgroundColor: provider.theme == ThemeMode.light
+                      ? MyThemeData.primary
+                      : MyThemeData.primaryDark),
               BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage("assets/images/book.png"),
-                    color: index == 2 ? Colors.black : Colors.white,
+                    color: index == 2
+                        ? Theme.of(context).colorScheme.background
+                        : Colors.white,
                   ),
-                  label: "Hadeeth",
-                  backgroundColor: MyThemeData.primary),
+                  label: "Hadeeth".tr(),
+                  backgroundColor: provider.theme == ThemeMode.light
+                      ? MyThemeData.primary
+                      : MyThemeData.primaryDark),
               BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage("assets/images/quran.png"),
-                    color: index == 3 ? Colors.black : Colors.white,
+                    color: index == 3
+                        ? Theme.of(context).colorScheme.background
+                        : Colors.white,
                   ),
-                  label: "Quran",
-                  backgroundColor: MyThemeData.primary),
+                  label: "Quran".tr(),
+                  backgroundColor: provider.theme == ThemeMode.light
+                      ? MyThemeData.primary
+                      : MyThemeData.primaryDark),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.settings,
-                    color: index == 4 ? Colors.black : Colors.white,
+                    color: index == 4
+                        ? Theme.of(context).colorScheme.background
+                        : Colors.white,
                   ),
-                  label: "Settings"),
+                  label: "Settings".tr(),
+                  backgroundColor: provider.theme == ThemeMode.light
+                      ? MyThemeData.primary
+                      : MyThemeData.primaryDark),
             ],
           ),
           body: tabs[index],

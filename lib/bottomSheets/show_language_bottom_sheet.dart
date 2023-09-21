@@ -18,6 +18,7 @@ class LanguageSheet extends StatelessWidget {
           InkWell(
             onTap: () {
               EasyLocalization.of(context)!.setLocale(Locale("en"));
+              Navigator.pop(context);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,6 +50,7 @@ class LanguageSheet extends StatelessWidget {
           InkWell(
             onTap: () {
               EasyLocalization.of(context)!.setLocale(Locale("ar"));
+              Navigator.pop(context);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

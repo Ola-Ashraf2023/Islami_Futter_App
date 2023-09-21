@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/ahadeth_details.dart';
-import 'package:islami_app/hadeeth_model.dart';
+import 'package:islami_app/models/hadeeth_model.dart';
 import 'package:islami_app/my_theme_data.dart';
 
 class HadeethTab extends StatelessWidget {
